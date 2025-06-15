@@ -125,16 +125,74 @@ const Toggle = ({ label, checked, onChange }) => (
   </div>
 )
 
+// iOS Control Center Custom Icons - Following Apple Design Principles
+const WiFiIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+    <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+    <circle cx="12" cy="20" r="1" fill={color}/>
+  </svg>
+)
+
+const BluetoothIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="none">
+    <path d="M12 1l6 6-4.5 4.5L18 16l-6 6V14l-3.5 3.5L7 16l4.5-4L7 8l1.5-1.5L12 10V1zm2 9l2-2-2-2v4zm0 8l2-2-2-2v4z" fill={color}/>
+  </svg>
+)
+
+const AirplaneIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+  </svg>
+)
+
+const BatteryIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="16" height="10" x="2" y="7" rx="2" ry="2"/>
+    <line x1="22" x2="22" y1="11" y2="13"/>
+    <rect width="12" height="6" x="4" y="9" rx="1" fill={color}/>
+  </svg>
+)
+
+const BrightnessIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="4" fill={color}/>
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/>
+    <path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/>
+    <path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+)
+
+const LockIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+    <circle cx="12" cy="16" r="1" fill={color}/>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>
+)
+
+const FocusIcon = ({ size = 20, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="none">
+    <path d="M12 3a9 9 0 109 9c-2.5 0-4.8-1-6.5-2.7A6.5 6.5 0 0112 3z" fill={color}/>
+  </svg>
+)
+
 function App() {
   const [config, setConfig] = useState({
-    opacity: 0.15,
-    blur: 20,
+    opacity: 0.1,
+    blur: 40,
     saturation: 180,
     brightness: 110,
     contrast: 100,
     hueRotate: 0,
-    borderRadius: 16,
-    borderOpacity: 0.3,
+    borderRadius: 20,
+    borderOpacity: 0.18,
     specularHighlight: true,
     liquidAnimation: true
   })
@@ -142,6 +200,24 @@ function App() {
   const [backgroundImage, setBackgroundImage] = useState('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop')
   const [darkMode, setDarkMode] = useState(false)
   const [previewMode, setPreviewMode] = useState('chat')
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Handle scroll behavior for sticky navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const threshold = 80 // Threshold for when to show sticky state
+      
+      if (scrollPosition > threshold && !isScrolled) {
+        setIsScrolled(true)
+      } else if (scrollPosition <= threshold && isScrolled) {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isScrolled])
 
   // Apply CSS variables
   useEffect(() => {
@@ -201,7 +277,7 @@ function App() {
   return (
     <div className="app" style={{ backgroundImage: `url(${backgroundImage})` }}>
       {/* Header */}
-      <header className="header">
+      <header className={`header ${isScrolled ? 'header-sticky' : ''}`}>
         <div className="header-content">
           <div className="logo">
             <div className="logo-icon"><LiquidGlassIcon size={24} color="currentColor" /></div>
@@ -301,10 +377,10 @@ function App() {
               <div className="contact-preview">
                 <div className="glass-element contact-card">
                   <div className="contact-avatar">
-                    <div className="avatar large">S</div>
+                    <div className="avatar large">F</div>
                     <div className="status-dot"></div>
                   </div>
-                  <h2>Sarah Chen</h2>
+                  <h2>Emmanuel Fatade</h2>
                   <p>+1 (555) 123-4567</p>
                   <p className="last-seen">Last seen today at 3:45 PM</p>
                   
@@ -341,7 +417,7 @@ function App() {
 
                 <div className="recent-updates">
                   <h4>Recent updates</h4>
-                  {['Emma Wilson', 'David Kim', 'Lisa Zhang'].map((name, i) => (
+                  {['Emma Wilson', 'David Adenuga', 'Esther Wang'].map((name, i) => (
                     <div key={name} className="glass-element status-item">
                       <div className="avatar">{name[0]}</div>
                       <div className="status-info">
@@ -351,6 +427,48 @@ function App() {
                       <div className="status-indicator"></div>
                     </div>
                   ))}
+                </div>
+
+                {/* iOS Control Center Demo */}
+                <div className="ios-controls-demo" style={{ marginTop: '24px' }}>
+                  <h4 style={{ marginBottom: '16px', opacity: 0.8, fontSize: '0.875rem', fontWeight: 600, color: 'white' }}>iOS Control Center Demo</h4>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+                    <div className="glass-element ios-blue" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><WiFiIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>WiFi</div>
+                    </div>
+                    <div className="glass-element ios-blue" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><BluetoothIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>Bluetooth</div>
+                    </div>
+                    <div className="glass-element" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><AirplaneIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>Airplane</div>
+                    </div>
+                    <div className="glass-element ios-green" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><BatteryIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>Battery</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '12px', marginTop: '12px' }}>
+                    <div className="glass-element" style={{ padding: '16px', borderRadius: '20px', display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
+                      <BrightnessIcon size={20} color="white" />
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: '0.875rem', fontWeight: '500', marginBottom: '4px' }}>Brightness</div>
+                        <div style={{ height: '4px', background: 'rgba(255,255,255,0.2)', borderRadius: '2px', position: 'relative' }}>
+                          <div style={{ height: '100%', width: '70%', background: 'white', borderRadius: '2px' }}></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="glass-element ios-orange" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><LockIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>Lock</div>
+                    </div>
+                    <div className="glass-element ios-red" style={{ aspectRatio: '1', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                      <div style={{ marginBottom: '8px' }}><FocusIcon size={24} color="white" /></div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: '500' }}>Focus</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
