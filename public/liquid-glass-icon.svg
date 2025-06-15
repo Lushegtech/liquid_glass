@@ -1,0 +1,27 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#25D366;stop-opacity:0.6" />
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.4);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main glass shape -->
+  <rect width="32" height="32" rx="8" fill="url(#glassGradient)" opacity="0.9"/>
+  
+  <!-- Glass highlight -->
+  <rect x="2" y="2" width="28" height="14" rx="6" fill="url(#highlight)"/>
+  
+  <!-- Liquid drop shapes -->
+  <circle cx="12" cy="12" r="3" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="20" cy="20" r="2.5" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="8" cy="22" r="2" fill="rgba(255,255,255,0.25)"/>
+  
+  <!-- Glass border -->
+  <rect width="32" height="32" rx="8" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+</svg> 

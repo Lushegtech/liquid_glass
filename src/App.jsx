@@ -63,9 +63,33 @@ const MoonIcon = ({ size = 20, color = "currentColor" }) => (
   </svg>
 )
 
-const LightningIcon = ({ size = 24, color = "currentColor" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
-    <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+const LiquidGlassIcon = ({ size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <defs>
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor:"#667eea", stopOpacity:1}} />
+        <stop offset="50%" style={{stopColor:"#764ba2", stopOpacity:0.8}} />
+        <stop offset="100%" style={{stopColor:"#25D366", stopOpacity:0.6}} />
+      </linearGradient>
+      <linearGradient id="logoHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+        <stop offset="0%" style={{stopColor:"rgba(255,255,255,0.4)", stopOpacity:1}} />
+        <stop offset="100%" style={{stopColor:"rgba(255,255,255,0.1)", stopOpacity:0}} />
+      </linearGradient>
+    </defs>
+    
+    {/* Main glass shape */}
+    <rect width="24" height="24" rx="6" fill="url(#logoGradient)" opacity="0.9"/>
+    
+    {/* Glass highlight */}
+    <rect x="1.5" y="1.5" width="21" height="10.5" rx="4.5" fill="url(#logoHighlight)"/>
+    
+    {/* Liquid drop shapes */}
+    <circle cx="9" cy="9" r="2.25" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="15" cy="15" r="1.875" fill="rgba(255,255,255,0.2)"/>
+    <circle cx="6" cy="16.5" r="1.5" fill="rgba(255,255,255,0.25)"/>
+    
+    {/* Glass border */}
+    <rect width="24" height="24" rx="6" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="0.75"/>
   </svg>
 )
 
@@ -180,7 +204,7 @@ function App() {
       <header className="header">
         <div className="header-content">
           <div className="logo">
-            <div className="logo-icon"><LightningIcon size={24} color="currentColor" /></div>
+            <div className="logo-icon"><LiquidGlassIcon size={24} color="currentColor" /></div>
             <div>
               <h1>Liquid Glass UI</h1>
             </div>
