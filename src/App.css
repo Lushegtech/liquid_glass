@@ -235,20 +235,20 @@ body {
 /* Dark mode sticky header */
 .dark-mode .header-sticky {
   background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 
-    0 1px 0 rgba(255, 255, 255, 0.05),
-    0 4px 32px rgba(0, 0, 0, 0.3);
+    0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 32px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode .header-sticky .preview-modes {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .dark-mode .header-sticky .theme-btn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Prevent content jump when sticky header appears */
@@ -575,9 +575,14 @@ body.sticky-header-active {
 }
 
 .sent-bubble {
-  background: rgba(0, 122, 255, 0.8);
-  border: 1px solid rgba(0, 122, 255, 0.9);
+  background: rgba(52, 199, 89, 0.4);
+  backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+  border: 1px solid rgba(52, 199, 89, 0.6);
   margin-left: auto;
+  box-shadow: 
+    0 8px 32px rgba(52, 199, 89, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .message-bubble p {
@@ -600,7 +605,7 @@ body.sticky-header-active {
 }
 
 .checkmarks {
-  color: rgba(255, 255, 255, 0.8);
+  color: #53bdeb;
   font-size: 0.75rem;
 }
 
@@ -1089,13 +1094,13 @@ body.sticky-header-active {
 }
 
 .bg-option.active {
-  border: 2px solid #007AFF;
+  border: 2px solid #34C759;
   transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
 }
 
 .bg-option.active::after {
-  background: rgba(0, 122, 255, 0.1);
+  background: rgba(52, 199, 89, 0.1);
 }
 
 .preset-buttons {
@@ -1444,113 +1449,351 @@ body.sticky-header-active {
 
 /* Enhanced glass elements for dark mode */
 .dark-mode .glass-element {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(40px) saturate(180%) brightness(110%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* iOS Control Center Dark Mode Colored States */
 .dark-mode .glass-element.ios-blue {
-  background: rgba(0, 122, 255, 0.7);
-  border: 1px solid rgba(0, 122, 255, 0.8);
+  background: rgba(0, 122, 255, 0.6);
+  border: 1px solid rgba(0, 122, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dark-mode .glass-element.ios-green {
-  background: rgba(52, 199, 89, 0.7);
-  border: 1px solid rgba(52, 199, 89, 0.8);
+  background: rgba(52, 199, 89, 0.6);
+  border: 1px solid rgba(52, 199, 89, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dark-mode .glass-element.ios-red {
-  background: rgba(255, 59, 48, 0.7);
-  border: 1px solid rgba(255, 59, 48, 0.8);
+  background: rgba(255, 59, 48, 0.6);
+  border: 1px solid rgba(255, 59, 48, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .dark-mode .glass-element.ios-orange {
-  background: rgba(255, 149, 0, 0.7);
-  border: 1px solid rgba(255, 149, 0, 0.8);
+  background: rgba(255, 149, 0, 0.6);
+  border: 1px solid rgba(255, 149, 0, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 /* Header in dark mode */
 .dark-mode .header {
-  backdrop-filter: blur(40px) saturate(180%) brightness(110%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
-  background: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Navigation in dark mode */
 .dark-mode .preview-modes {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+}
+
+.dark-mode .mode-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .mode-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.dark-mode .mode-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dark-mode .theme-btn {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .theme-btn:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 /* Controls panel in dark mode */
 .dark-mode .controls-panel {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .controls-panel h2 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Control groups in dark mode */
+.dark-mode .control-group h3 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Slider containers in dark mode */
+.dark-mode .slider-container {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.dark-mode .slider-container:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .slider-header label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .slider-value {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .slider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .slider::-webkit-slider-thumb {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .slider::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Toggle containers in dark mode */
+.dark-mode .toggle-container {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.dark-mode .toggle-container:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .toggle-container span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .toggle-off {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .toggle-on {
+  background: linear-gradient(135deg, #34C759, #30A14E);
+}
+
+.dark-mode .toggle-thumb {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Background grid in dark mode */
+.dark-mode .bg-option {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .bg-option:hover {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.dark-mode .bg-option.active {
+  border: 2px solid #34C759;
+  box-shadow: 0 8px 24px rgba(52, 199, 89, 0.3);
+}
+
+.dark-mode .bg-option.active::after {
+  background: rgba(52, 199, 89, 0.1);
+}
+
+/* Preset buttons in dark mode */
+.dark-mode .preset-btn {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .preset-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .preset-btn:active {
+  transform: translateY(0px) scale(0.98);
 }
 
 /* Chat elements in dark mode */
 .dark-mode .chat-actions button {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.dark-mode .chat-actions button:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .dark-mode .chat-input {
   background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
 }
 
 .dark-mode .chat-input input {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Slider and toggle containers in dark mode */
-.dark-mode .slider-container {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.dark-mode .toggle-container {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Preset buttons in dark mode */
-.dark-mode .preset-btn {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.dark-mode .preset-btn:hover {
+.dark-mode .chat-input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .chat-input input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .chat-input button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .chat-input button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sent bubble in dark mode */
+.dark-mode .sent-bubble {
+  background: rgba(52, 199, 89, 0.3);
+  border: 1px solid rgba(52, 199, 89, 0.5);
+  backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(120%);
+  box-shadow: 
+    0 8px 32px rgba(52, 199, 89, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Contact card in dark mode */
+.dark-mode .contact-card {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .contact-card h2 {
+  color: white;
+}
+
+.dark-mode .contact-card p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .last-seen {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .action-btn {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .action-btn:hover {
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Status elements in dark mode */
+.dark-mode .my-status {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .status-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .status-info h3 {
+  color: white;
+}
+
+.dark-mode .status-info p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .recent-updates h4 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .add-status {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .add-status:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 /* Avatar adjustments */
 .dark-mode .avatar {
   background: linear-gradient(135deg, #374151, #1f2937);
-  color: var(--text-primary);
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Voice message controls in dark mode */
 .dark-mode .play-btn {
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .play-btn:hover {
   background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
 }
 
 /* Waveform in dark mode */
@@ -1558,14 +1801,29 @@ body.sticky-header-active {
   background: rgba(255, 255, 255, 0.6);
 }
 
-/* Theme button */
-.dark-mode .theme-btn {
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--text-primary);
+/* Scrollbar in dark mode */
+.dark-mode .controls-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-.dark-mode .theme-btn:hover {
-  background: rgba(0, 0, 0, 0.4);
+.dark-mode .controls-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .controls-panel::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.4)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Prevent content jump when sticky header appears */
@@ -1601,5 +1859,56 @@ body.sticky-header-active {
   
   body.sticky-header-active {
     padding-top: 70px;
+  }
+}
+
+/* Additional Dark Mode Enhancements */
+
+/* Message elements dark mode */
+.dark-mode .message-bubble {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .time {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .message-meta {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Chat header dark mode */
+.dark-mode .chat-header {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .chat-info h3 {
+  color: white;
+}
+
+.dark-mode .chat-info p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* iOS Control Center demo dark mode */
+.dark-mode .ios-controls-demo h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile dark mode enhancements */
+@media (max-width: 768px) {
+  .dark-mode .header {
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode .preview-modes {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode .theme-btn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 } 
