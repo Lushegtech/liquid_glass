@@ -189,7 +189,7 @@ body {
 
 /* Enhanced sticky header content */
 .header-sticky .header-content {
-  padding: 0;
+  padding: 0 2rem;
 }
 
 .header-sticky .logo h1 {
@@ -293,7 +293,7 @@ body.sticky-header-active {
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .logo {
