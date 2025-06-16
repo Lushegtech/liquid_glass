@@ -986,7 +986,7 @@ body.sticky-header-active {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* iOS Control Center Style Toggles */
+/* iOS Control Center Style Toggles (look into this) */
 .toggle-container {
   display: flex;
   justify-content: space-between;
